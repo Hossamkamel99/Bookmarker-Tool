@@ -1,0 +1,59 @@
+<!-- FontAwesome,Bootstrab,JS -->
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belanosima&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="./Bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="./FontAwesome/all.min.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <title></title>
+    <link rel="icon" href="" />
+</head>
+
+
+
+
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+        <h1 class="mt-5">Bookmarker</h1>
+
+        <div class="dot w-100 p-3 py-4 my-5 d-flex flex-column justify-content-center align-items-center gap-4">
+            <h2><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+            <div class="site-name w-100 d-flex flex-column justify-content-center">
+
+                <label for="siteName"><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label>
+                <input type="text" class="rounded border-0" name="" value="" placeholder="  Bookmark Name" id="siteName">
+
+            </div>
+            <div class="site-name w-100 d-flex flex-column justify-content-center">
+
+                <label for="siteURL"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                <input type="text" class="rounded border-0" name="" value="" placeholder="  Website URL" id="siteURL">
+
+            </div>
+            <button onclick="addBookmark()" class="submitBtn btn btn-primary">Submit</button>
+        </div>
+        <table class="table mt-4 text-center bg-light">
+            <thead>
+                <tr>
+                    <th class="text-capitalize">index</th>
+                    <th class="text-capitalize">Website Name</th>
+                    <th class="text-capitalize">Visit</th>
+                    <th class="text-capitalize">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tableContent"></tbody>
+        </table>
+    </div>
+
+
+    <script src="./Bootstrap/bootstrap.bundle.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
