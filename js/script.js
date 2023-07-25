@@ -3,6 +3,7 @@ var siteURLInput = document.getElementById("siteURL");
 var bookmarksList = [];
 var currentIndex;
 
+
 if (localStorage.getItem('bookmarks') !== null) {
 	bookmarksList = JSON.parse(localStorage.getItem('bookmarks'));
 	displayBookmark(bookmarksList);
