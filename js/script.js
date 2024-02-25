@@ -29,11 +29,11 @@ function addBookmark() {
 	}
 }
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
 	if (event.keyCode === 13) {
-	  addBookmark();
+		addBookmark();
 	}
-  });
+});
 
 function search() {
 	for (var i = 0; i < bookmarksList.length; i++) {
@@ -58,10 +58,11 @@ function displayBookmark(arr) {
 	for (var i = 0; i < arr.length; i++) {
 		cartona += `<tr>
         <td class="text-primary">${(i + 1)}</td>
-        <td class="text-primary">${arr[i].name}</td >
-		<td class="text-primary">${arr[i].url}</td>
-        <td><a href="https://${arr[i].url}" target="_blank" class="btn btn-outline-warning btn-sm"><i class="fa-solid fa-eye"></i>Visit</a></td>
-        <td><button onclick="deleteBookmark(${i})" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
+        <td class="text-primary text-break">${arr[i].name}</td >
+		<td class="text-primary text-break">${arr[i].url}</td>
+        <td class="btns" ><a href="https://${arr[i].url}" target="_blank" class="rounded text-center btn btn-outline-warning "><i class="fa-regular fa-eye text-center"></i></a>
+		<button onclick="deleteBookmark(${i})" class="btn btn-outline-danger rounded"><i class="fa-solid fa-sharb fa-trash-can"></i></button>
+		</td>
         </tr>`
 	}
 	document.getElementById('tableContent').innerHTML = cartona;
