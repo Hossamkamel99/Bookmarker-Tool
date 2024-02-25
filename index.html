@@ -1,7 +1,8 @@
 <!-- FontAwesome,Bootstrab,JS -->
-<html>
-
+<!DOCTYPE html>
+<html lang="en" title="Bookmark Tool">
 <head>
+    <title>Bookmark Tool</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,12 +12,9 @@
     <link href="./Bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="./FontAwesome/all.min.css" rel="stylesheet" />
     <link href="./css/style.css" rel="stylesheet" />
-    <title></title>
-    <link rel="icon" href="" />
+
+    <link rel="icon" href="./img/bookmark-flat.png" />
 </head>
-
-
-
 
 <body>
     <div class="container d-flex flex-column justify-content-center align-items-center">
@@ -36,21 +34,26 @@
                 <input type="text" class="rounded border-0" name="" value="" placeholder="  Website URL" id="siteURL">
 
             </div>
-            <button onclick="addBookmark()" class="submitBtn btn btn-primary">Submit</button>
-        </div>
-        <table class="table mt-4 text-center bg-light">
-            <thead>
-                <tr>
-                    <th class="text-capitalize">index</th>
-                    <th class="text-capitalize">Website Name</th>
-                    <th class="text-capitalize">Visit</th>
-                    <th class="text-capitalize">Delete</th>
+            <form onsubmit="addBookmark(); return false;">
+                <button type="submit" class="submitBtn btn btn-primary">Submit</button>
+              </form></div>
+        <table class="table mt-4 text-center rounded overflow-hidden">
+            <thead class="">
+                <tr class="">
+                    <th class="text-capitalize text-primary">index</th>
+                    <th class="text-capitalize text-primary">Website Name</th>
+                    <th class="text-capitalize text-primary">URL</th>
+                    <th class="text-capitalize text-warning">Visit</th>
+                    <th class="text-capitalize text-danger">Delete</th>
                 </tr>
             </thead>
             <tbody id="tableContent"></tbody>
         </table>
     </div>
 
+    <!-- <footer class="w-100 bg-black">
+<span>hossa</span>
+    </footer> -->
 
     <script src="./Bootstrap/bootstrap.bundle.js"></script>
     <script src="./js/script.js"></script>

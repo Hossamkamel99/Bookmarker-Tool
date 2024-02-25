@@ -10,6 +10,7 @@ if (localStorage.getItem('bookmarks') !== null) {
 }
 
 function addBookmark() {
+
 	if (validateSiteName() == true && validateSiteURL() == true) {
 		var bookmark = {
 			name: siteNameInput.value,
@@ -21,12 +22,18 @@ function addBookmark() {
 			displayBookmark(bookmarksList);
 			clear();
 		} else {
-			alert('Bookmark already exict')
+			alert('Bookmark already exist')
 		}
 	} else {
 		alert('Bookmark Name should be valid , Bookmark URL should be a valid url')
 	}
 }
+
+document.addEventListener('keydown', function(event) {
+	if (event.keyCode === 13) {
+	  addBookmark();
+	}
+  });
 
 function search() {
 	for (var i = 0; i < bookmarksList.length; i++) {
@@ -46,11 +53,13 @@ function clear() {
 }
 
 function displayBookmark(arr) {
+
 	var cartona = ``;
 	for (var i = 0; i < arr.length; i++) {
 		cartona += `<tr>
-        <td>${(i + 1)}</td>
-        <td>${arr[i].name}</td>
+        <td class="text-primary">${(i + 1)}</td>
+        <td class="text-primary">${arr[i].name}</td >
+		<td class="text-primary">${arr[i].url}</td>
         <td><a href="https://${arr[i].url}" target="_blank" class="btn btn-outline-warning btn-sm"><i class="fa-solid fa-eye"></i>Visit</a></td>
         <td><button onclick="deleteBookmark(${i})" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash-can"></i>Delete</button></td>
         </tr>`
@@ -66,11 +75,11 @@ function deleteBookmark(bookmarkIndex) {
 }
 
 function validateSiteName() {
-	var regex = /[A-Z]|[a-z]{3,}$/
+	var regex = /[A-Za-z\d]{1,}$/
 	return regex.test(siteNameInput.value);
 }
 
 function validateSiteURL() {
-	var regex = /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/
+	var regex = /^(?:https?:\/\/)?(?:www\.)?[\w-]+\.+(?:com|net|mr|\w{2,})(?:\/.*)?$/
 	return regex.test(siteURLInput.value);
 }

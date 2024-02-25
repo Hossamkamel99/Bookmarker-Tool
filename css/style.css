@@ -1,5 +1,7 @@
 body {
     background: linear-gradient(to top, #c5c2c2, #3339ec);
+    background-repeat: no-repeat;
+    height: 200vh;
     font-family: 'Belanosima', sans-serif;
     font-family: 'Rajdhani', sans-serif;
 }
@@ -33,10 +35,11 @@ h1:hover::before {
     height: 90%;
 }
 
-h2 {
-    background-image: linear-gradient(to right,  #00eaff,#ffe600);
-    background-clip: text;
+h2 , label {
+    background-image: linear-gradient(to right,  #0bacdd,#ffe600);
     -webkit-background-clip: text;
+    background-clip: text;
+
     -webkit-text-fill-color: transparent;
 }
 
